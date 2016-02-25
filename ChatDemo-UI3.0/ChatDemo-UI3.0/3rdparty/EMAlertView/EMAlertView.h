@@ -2,8 +2,8 @@
 //  EMAlertView.h
 //  AlertView
 //
-//  Created by EaseMob on 15/4/1.
-//  Copyright (c) 2015年 EaseMob. All rights reserved.
+//  Created by Hyphenate on 15/4/1.
+//  Copyright (c) 2015年 Hyphenate. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

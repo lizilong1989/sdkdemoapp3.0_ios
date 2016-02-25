@@ -23,7 +23,7 @@
 
     #import "EMSDK.h"
 #if DEMO_CALL == 1
-    #import "EMClient+Call.h"
+    #import "EMSDKFull.h"
 #endif
     #import "EaseUI.h"
 

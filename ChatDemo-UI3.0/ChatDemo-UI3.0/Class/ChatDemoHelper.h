@@ -2,8 +2,8 @@
 //  ChatDemoHelper.h
 //  ChatDemo-UI3.0
 //
-//  Created by EaseMob on 15/12/8.
-//  Copyright © 2015年 EaseMob. All rights reserved.
+//  Created by Hyphenate on 15/12/8.
+//  Copyright © 2015年 Hyphenate. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

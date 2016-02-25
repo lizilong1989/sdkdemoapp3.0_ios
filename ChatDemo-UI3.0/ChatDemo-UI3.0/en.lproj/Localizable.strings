@@ -1,13 +1,13 @@
 /************************************************************
- *  * EaseMob CONFIDENTIAL
+ *  * Hyphenate CONFIDENTIAL
  * __________________
- * Copyright (C) 2013-2014 EaseMob Technologies. All rights reserved.
+ * Copyright (C) 2015-2016 Hyphenate Technologies. All rights reserved.
  *
  * NOTICE: All information contained herein is, and remains
- * the property of EaseMob Technologies.
+ * the property of Hyphenate Technologies.
  * Dissemination of this information or reproduction of this material
  * is strictly forbidden unless prior written permission is obtained
- * from EaseMob Technologies.
+ * from Hyphenate Technologies.
  */
 
 //general
@@ -62,7 +62,7 @@
 "hasRead" = "Read";
 
 //app
-"AppName" = "EaseMobDemo";
+"AppName" = "HyphenateDemo";
 
 //error des
 "error.connectServerFail" = "Connect to the server failed!";
@@ -231,6 +231,7 @@
 "message.location1" = "[location]";
 "message.voice1" = "[audio]";
 "message.video1" = "[video]";
+"message.emoji1" = "[emoji]";
 "message.beginReceiveOffine" = "begin to receive offline messages";
 "message.endReceiveOffine" = "end to receive offline messages";
 "message.toolBar.inputPlaceHolder" = "input a new message";
@@ -318,7 +319,7 @@
 "setting.setBitrate" = "Set Bitrate";
 "setting.setBitrateTips" = "Set Bitrate should be 150-1000";
 "setting.personalInfoUpload" = "HeadImage";
-"setting.edittips" = "After setting this nickname, chat with the iOS client demo project, iOS will display this nickname is not a EaseMob ID, if the other party to use the Android client this setting is not effective";
+"setting.edittips" = "After setting this nickname, chat with the iOS client demo project, iOS will display this nickname is not a Hyphenate ID, if the other party to use the Android client this setting is not effective";
 "setting.iospushname" = "iOS push nickname";
 "setting.useIp" = "Use IP";
 "setting.deleteConWhenLeave" = "Delete conversation when leave a group";

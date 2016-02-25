@@ -1,13 +1,13 @@
 /************************************************************
-  *  * EaseMob CONFIDENTIAL 
+  *  * Hyphenate CONFIDENTIAL 
   * __________________ 
-  * Copyright (C) 2013-2014 EaseMob Technologies. All rights reserved. 
+  * Copyright (C) 2015-2016 Hyphenate Technologies. All rights reserved. 
   *  
   * NOTICE: All information contained herein is, and remains 
-  * the property of EaseMob Technologies.
+  * the property of Hyphenate Technologies.
   * Dissemination of this information or reproduction of this material 
   * is strictly forbidden unless prior written permission is obtained
-  * from EaseMob Technologies.
+  * from Hyphenate Technologies.
   */
 
 #import "LoginViewController.h"
@@ -60,7 +60,7 @@
     
 //    [_useIpSwitch setOn:[[EMClient sharedClient].options enableDnsConfig] animated:YES];
     
-    self.title = NSLocalizedString(@"AppName", @"EaseMobDemo");
+    self.title = NSLocalizedString(@"AppName", @"HyphenateDemo");
 }
 
 - (void)viewDidAppear:(BOOL)animated

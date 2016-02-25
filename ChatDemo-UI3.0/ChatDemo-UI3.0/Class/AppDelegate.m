@@ -1,20 +1,20 @@
 /************************************************************
- *  * EaseMob CONFIDENTIAL
+ *  * Hyphenate CONFIDENTIAL
  * __________________
- * Copyright (C) 2013-2014 EaseMob Technologies. All rights reserved.
+ * Copyright (C) 2015-2016 Hyphenate Technologies. All rights reserved.
  *
  * NOTICE: All information contained herein is, and remains
- * the property of EaseMob Technologies.
+ * the property of Hyphenate Technologies.
  * Dissemination of this information or reproduction of this material
  * is strictly forbidden unless prior written permission is obtained
- * from EaseMob Technologies.
+ * from Hyphenate Technologies.
  */
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "LoginViewController.h"
 
-#import "AppDelegate+EaseMob.h"
+#import "AppDelegate+Hyphenate.h"
 #import "AppDelegate+UMeng.h"
 #import "AppDelegate+Parse.h"
 
@@ -45,7 +45,7 @@
     // 环信UIdemo中有用到Parse，您的项目中不需要添加，可忽略此处。
     [self parseApplication:application didFinishLaunchingWithOptions:launchOptions];
     
-#warning 初始化环信SDK，详细内容在AppDelegate+EaseMob.m 文件中
+#warning 初始化环信SDK，详细内容在AppDelegate+Hyphenate.m 文件中
 #warning SDK注册 APNS文件的名字, 需要与后台上传证书时的名字一一对应
     NSString *apnsCertName = nil;
 #if DEBUG
@@ -53,9 +53,9 @@
 #else
     apnsCertName = @"chatdemoui";
 #endif
-    [self easemobApplication:application
+    [self HyphenateApplication:application
 didFinishLaunchingWithOptions:launchOptions
-                      appkey:@"easemob-demo#chatdemoui"
+                      appkey:@"easemob-demo#no1"
                 apnsCertName:apnsCertName
                  otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES]}];
 

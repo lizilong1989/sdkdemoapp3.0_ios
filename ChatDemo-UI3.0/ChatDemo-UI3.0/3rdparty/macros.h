@@ -1,13 +1,18 @@
-//
-//  macros.h
-//  EaseMob
-//
-//  Created by Ji Fang on 3/8/13.
-//  Copyright (c) 2013 Ji Fang. All rights reserved.
-//
+/************************************************************
+ *  * Hyphenate CONFIDENTIAL
+ * __________________
+ * Copyright (C) 2015-2016 Hyphenate Technologies. All rights reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Hyphenate Technologies.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Hyphenate Technologies.
+ */
+
 #import "XDDefine.h"
-#ifndef EaseMob_macros_h
-#define EaseMob_macros_h
+#ifndef Hyphenate_macros_h
+#define Hyphenate_macros_h
 
 
 #define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]

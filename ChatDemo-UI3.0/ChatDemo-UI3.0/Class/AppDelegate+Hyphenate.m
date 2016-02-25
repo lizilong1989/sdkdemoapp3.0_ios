@@ -1,17 +1,17 @@
 /************************************************************
- *  * EaseMob CONFIDENTIAL
+ *  * Hyphenate CONFIDENTIAL
  * __________________
- * Copyright (C) 2013-2014 EaseMob Technologies. All rights reserved.
+ * Copyright (C) 2015-2016 Hyphenate Technologies. All rights reserved.
  *
  * NOTICE: All information contained herein is, and remains
- * the property of EaseMob Technologies.
+ * the property of Hyphenate Technologies.
  * Dissemination of this information or reproduction of this material
  * is strictly forbidden unless prior written permission is obtained
- * from EaseMob Technologies.
+ * from Hyphenate Technologies.
  */
 
-#import "AppDelegate+EaseMob.h"
-#import "AppDelegate+EaseMobDebug.h"
+#import "AppDelegate+Hyphenate.h"
+#import "AppDelegate+HyphenateDebug.h"
 #import "AppDelegate+Parse.h"
 
 #import "LoginViewController.h"
@@ -19,12 +19,12 @@
 #import "MBProgressHUD.h"
 
 /**
- *  本类中做了EaseMob初始化和推送等操作
+ *  本类中做了Hyphenate初始化和推送等操作
  */
 
-@implementation AppDelegate (EaseMob)
+@implementation AppDelegate (Hyphenate)
 
-- (void)easemobApplication:(UIApplication *)application
+- (void)HyphenateApplication:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                     appkey:(NSString *)appkey
               apnsCertName:(NSString *)apnsCertName
@@ -36,11 +36,11 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                                                  name:KNOTIFICATION_LOGINCHANGE
                                                object:nil];
     
-    [[EaseSDKHelper shareHelper] easemobApplication:application
-                    didFinishLaunchingWithOptions:launchOptions
-                                           appkey:@"easemob-demo#chatdemoui"
-                                     apnsCertName:apnsCertName
-                                      otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES],@"easeSandBox":[NSNumber numberWithBool:[self isSpecifyServer]]}];
+    [[EaseSDKHelper shareHelper] hyphenateApplication:application
+                        didFinishLaunchingWithOptions:launchOptions
+                                               appkey:appkey
+                                         apnsCertName:apnsCertName
+                                          otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES],@"easeSandBox":[NSNumber numberWithBool:[self isSpecifyServer]]}];
     
     [ChatDemoHelper shareHelper];
     

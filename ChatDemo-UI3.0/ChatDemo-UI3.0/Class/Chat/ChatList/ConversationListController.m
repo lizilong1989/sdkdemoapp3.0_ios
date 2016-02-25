@@ -1,10 +1,14 @@
-//
-//  ConversationListController.m
-//  ChatDemo-UI3.0
-//
-//  Created by dhc on 15/6/25.
-//  Copyright (c) 2015年 easemob.com. All rights reserved.
-//
+/************************************************************
+ *  * Hyphenate CONFIDENTIAL
+ * __________________
+ * Copyright (C) 2015-2016 Hyphenate Technologies. All rights reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Hyphenate Technologies.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Hyphenate Technologies.
+ */
 
 #import "ConversationListController.h"
 
@@ -260,7 +264,7 @@
                                             convertToSystemEmoticons:((EMTextMessageBody *)messageBody).text];
                 latestMessageTitle = didReceiveText;
                 if ([lastMessage.ext objectForKey:MESSAGE_ATTR_IS_BIG_EXPRESSION]) {
-                    latestMessageTitle = @"[动画表情]";
+                    latestMessageTitle = NSLocalizedString(@"message.emoji1", @"[emoji]");
                 }
             } break;
             case EMMessageBodyTypeVoice:{
