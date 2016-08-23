@@ -117,6 +117,7 @@
         _textView.placeholder = NSLocalizedString(@"group.create.inputDescribe", @"please enter a group description");
         _textView.returnKeyType = UIReturnKeyDone;
         _textView.delegate = self;
+        _textView.accessibilityIdentifier = @"GreateGroupVC_textview";
     }
     
     return _textView;

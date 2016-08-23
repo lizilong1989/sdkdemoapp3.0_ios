@@ -57,6 +57,7 @@
     
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.tableFooterView = self.footerView;
+    self.tableView.accessibilityIdentifier = @"SettingVC_tableview";
 }
 
 - (void)didReceiveMemoryWarning
@@ -311,6 +312,7 @@
         [logoutButton setTitle:logoutButtonTitle forState:UIControlStateNormal];
         [logoutButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [logoutButton addTarget:self action:@selector(logoutAction) forControlEvents:UIControlEventTouchUpInside];
+        logoutButton.accessibilityIdentifier = @"logoutButton";
         [_footerView addSubview:logoutButton];
     }
     

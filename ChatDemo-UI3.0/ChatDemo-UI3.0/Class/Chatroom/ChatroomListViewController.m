@@ -196,6 +196,7 @@
     else {
         cell.textLabel.text = chatroom.chatroomId;
     }
+    cell.accessibilityIdentifier = [NSString stringWithFormat:@"ChatroomListVC_cell_%@",@(indexPath.row)];
     
     return cell;
 }

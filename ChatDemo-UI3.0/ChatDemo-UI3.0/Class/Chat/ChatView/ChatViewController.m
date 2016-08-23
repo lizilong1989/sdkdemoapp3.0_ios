@@ -50,6 +50,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(insertCallMessage:) name:@"insertCallMessage" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCallNotification:) name:@"callOutWithChatter" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCallNotification:) name:@"callControllerClose" object:nil];
+    
+    [(EaseChatToolbar*)self.chatToolbar inputTextView].accessibilityIdentifier = @"ChatVC_inputtextview";
 }
 
 - (void)didReceiveMemoryWarning {

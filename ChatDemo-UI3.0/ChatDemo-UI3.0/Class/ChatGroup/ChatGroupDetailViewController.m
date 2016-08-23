@@ -148,6 +148,7 @@
         [_addButton setImage:[UIImage imageNamed:@"group_participant_add"] forState:UIControlStateNormal];
         [_addButton setImage:[UIImage imageNamed:@"group_participant_addHL"] forState:UIControlStateHighlighted];
         [_addButton addTarget:self action:@selector(addContact:) forControlEvents:UIControlEventTouchUpInside];
+        _addButton.accessibilityIdentifier = @"ChatGroupDetailVC_addButton";
         
         _longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(deleteContactBegin:)];
         _longPress.minimumPressDuration = 0.5;
