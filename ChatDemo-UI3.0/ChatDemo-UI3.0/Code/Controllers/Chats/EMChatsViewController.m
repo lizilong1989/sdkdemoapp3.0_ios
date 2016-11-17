@@ -88,14 +88,14 @@
         _networkStateView.backgroundColor = RGBACOLOR(0, 186, 110, 1);
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, (_networkStateView.frame.size.height - 20) / 2, 20, 20)];
-        imageView.image = [UIImage imageNamed:@"Icon_error"];
+        imageView.image = [UIImage imageNamed:@"Icon_error_white"];
         [_networkStateView addSubview:imageView];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageView.frame) + 5, 0, _networkStateView.frame.size.width - (CGRectGetMaxX(imageView.frame) + 15), _networkStateView.frame.size.height)];
         label.font = [UIFont systemFontOfSize:15.0];
         label.textColor = [UIColor grayColor];
         label.backgroundColor = [UIColor clearColor];
-        label.text = NSLocalizedString(@"network.disconnection", @"Network disconnection");
+        label.text = NSLocalizedString(@"network.disconnection", @"Network disconnected");
         [_networkStateView addSubview:label];
     }
     return _networkStateView;

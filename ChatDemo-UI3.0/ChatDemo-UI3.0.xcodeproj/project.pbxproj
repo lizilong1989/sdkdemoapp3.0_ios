@@ -123,6 +123,9 @@
 		D24510B21D965F9F006DB36F /* EMChatEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D24510B11D965F9F006DB36F /* EMChatEmotionView.m */; };
 		D24510B41D965FC3006DB36F /* EMChatEmotionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24510B31D965FC3006DB36F /* EMChatEmotionView.xib */; };
 		D246721B1D9CC36E003FF9E9 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		D24C6EAC1DDDD149001BF221 /* Icon_error_white.png in Resources */ = {isa = PBXBuildFile; fileRef = D24C6EA91DDDD149001BF221 /* Icon_error_white.png */; };
+		D24C6EAD1DDDD149001BF221 /* Icon_error_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D24C6EAA1DDDD149001BF221 /* Icon_error_white@2x.png */; };
+		D24C6EAE1DDDD149001BF221 /* Icon_error_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D24C6EAB1DDDD149001BF221 /* Icon_error_white@3x.png */; };
 		D25C716F1DBDC50200AB1C98 /* EMContactInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25C716E1DBDC50200AB1C98 /* EMContactInfoViewController.xib */; };
 		D28345041D8FD1D400FD48A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D28345031D8FD1D400FD48A9 /* main.m */; };
 		D28345071D8FD1D400FD48A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D28345061D8FD1D400FD48A9 /* AppDelegate.m */; };
@@ -636,6 +639,9 @@
 		D24510B01D965F9F006DB36F /* EMChatEmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMChatEmotionView.h; sourceTree = "<group>"; };
 		D24510B11D965F9F006DB36F /* EMChatEmotionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMChatEmotionView.m; sourceTree = "<group>"; };
 		D24510B31D965FC3006DB36F /* EMChatEmotionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EMChatEmotionView.xib; sourceTree = "<group>"; };
+		D24C6EA91DDDD149001BF221 /* Icon_error_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_error_white.png; sourceTree = "<group>"; };
+		D24C6EAA1DDDD149001BF221 /* Icon_error_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_error_white@2x.png"; sourceTree = "<group>"; };
+		D24C6EAB1DDDD149001BF221 /* Icon_error_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_error_white@3x.png"; sourceTree = "<group>"; };
 		D25C716E1DBDC50200AB1C98 /* EMContactInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EMContactInfoViewController.xib; sourceTree = "<group>"; };
 		D28344FF1D8FD1D400FD48A9 /* ChatDemo-UI3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChatDemo-UI3.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28345031D8FD1D400FD48A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1622,6 +1628,9 @@
 		D2BF7D3E1D914DB20090AA66 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				D24C6EA91DDDD149001BF221 /* Icon_error_white.png */,
+				D24C6EAA1DDDD149001BF221 /* Icon_error_white@2x.png */,
+				D24C6EAB1DDDD149001BF221 /* Icon_error_white@3x.png */,
 				D2F372AC1DD0755400C726E7 /* Location@2x.png */,
 				D2F372AA1DD073A800C726E7 /* faceDelete@2x.png */,
 				D20E26D41DCA011C00B3FAC6 /* icon_info.png */,
@@ -2009,6 +2018,7 @@
 				D2BF7E671D914DB30090AA66 /* Button_End@3x.png in Resources */,
 				D2BF7F191D914DB30090AA66 /* logo3.png in Resources */,
 				714E9DCA1DD32DAA009D1E2D /* default_group_avatar@3x.png in Resources */,
+				D24C6EAC1DDDD149001BF221 /* Icon_error_white.png in Resources */,
 				D2835FFF1D94FFD800EC7A4A /* Icon_Location_disable@2x.png in Resources */,
 				D2BF7ECD1D914DB30090AA66 /* Icon_Back@3x.png in Resources */,
 				D2BF7E2A1D914DB30090AA66 /* Button_Join@2x.png in Resources */,
@@ -2033,6 +2043,7 @@
 				D2BF7E8A1D914DB30090AA66 /* Icon_Check@2x.png in Resources */,
 				716633EC1DB0DE1F00C92E27 /* addContact_disable@3x.png in Resources */,
 				D2BF7F101D914DB30090AA66 /* logo10@3x.png in Resources */,
+				D24C6EAD1DDDD149001BF221 /* Icon_error_white@2x.png in Resources */,
 				D283600B1D95559500EC7A4A /* EMLocationViewController.xib in Resources */,
 				D28345121D8FD1D400FD48A9 /* LaunchScreen.storyboard in Resources */,
 				D2BF7EAD1D914DB30090AA66 /* Icon_Emoji.png in Resources */,
@@ -2072,6 +2083,7 @@
 				716633EB1DB0DE1F00C92E27 /* addContact_disable@2x.png in Resources */,
 				D2BF7EEB1D914DB30090AA66 /* Contacts@3x.png in Resources */,
 				7166345D1DB0EE9F00C92E27 /* EMGroupMemberListViewController.xib in Resources */,
+				D24C6EAE1DDDD149001BF221 /* Icon_error_white@3x.png in Resources */,
 				716633EE1DB0DE1F00C92E27 /* addContact_enable@2x.png in Resources */,
 				D2BF7E311D914DB30090AA66 /* Icon_New chat@3x.png in Resources */,
 				D28345301D90042F00FD48A9 /* EMMainViewController.xib in Resources */,

@@ -213,4 +213,4 @@
 "apns.content" = "Apns content";
 
 //network
-"network.disconnection" = "Network disconnection";
+"network.disconnection" = "Network disconnected";
