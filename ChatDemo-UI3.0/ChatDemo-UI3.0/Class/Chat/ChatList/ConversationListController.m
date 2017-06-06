@@ -19,6 +19,7 @@
 #import "RealtimeSearchUtil.h"
 #import "RedPacketChatViewController.h"
 #import "ChatDemoHelper.h"
+#import "OfficialAccountsChatViewController.h"
 
 #import "UIViewController+SearchController.h"
 
@@ -134,7 +135,7 @@
             } else {
                 UIViewController *chatController = nil;
 #ifdef REDPACKET_AVALABLE
-                chatController = [[RedPacketChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
+                chatController = [[OfficialAccountsChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
 #else
                 chatController = [[ChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
 #endif

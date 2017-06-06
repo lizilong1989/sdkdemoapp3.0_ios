@@ -473,12 +473,34 @@
 		D29A6BB51B7209C1002324BB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29A6BB41B7209C1002324BB /* Accounts.framework */; };
 		D29A6BB61B7209C8002324BB /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3527421931D33A00385240 /* Social.framework */; };
 		D29A6BB91B720A62002324BB /* AppDelegate+Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = D29A6BB81B720A62002324BB /* AppDelegate+Parse.m */; };
+		D29AA9161ED69B8700415EA6 /* OfficialAccountsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29AA9151ED69B8700415EA6 /* OfficialAccountsListViewController.m */; };
+		D29AA9171ED69B8700415EA6 /* OfficialAccountsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29AA9151ED69B8700415EA6 /* OfficialAccountsListViewController.m */; };
+		D29AA91A1ED6B2F700415EA6 /* OfficialAccountsToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D29AA9191ED6B2F700415EA6 /* OfficialAccountsToolBar.m */; };
+		D29AA91B1ED6B2F700415EA6 /* OfficialAccountsToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D29AA9191ED6B2F700415EA6 /* OfficialAccountsToolBar.m */; };
+		D29AA91E1ED6B32500415EA6 /* OfficialAccountsChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29AA91D1ED6B32500415EA6 /* OfficialAccountsChatViewController.m */; };
+		D29AA91F1ED6B32500415EA6 /* OfficialAccountsChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29AA91D1ED6B32500415EA6 /* OfficialAccountsChatViewController.m */; };
 		D2A910801C83E7890025AD0A /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A9107A1C83E7890025AD0A /* 114.png */; };
 		D2A910811C83E7890025AD0A /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A9107B1C83E7890025AD0A /* 120.png */; };
 		D2A910821C83E7890025AD0A /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A9107C1C83E7890025AD0A /* 29.png */; };
 		D2A910831C83E7890025AD0A /* 57.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A9107D1C83E7890025AD0A /* 57.png */; };
 		D2A910841C83E7890025AD0A /* 58.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A9107E1C83E7890025AD0A /* 58.png */; };
 		D2A910851C83E7890025AD0A /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A9107F1C83E7890025AD0A /* 80.png */; };
+		D2A9CDAC1EDEA39C00117F8D /* OfficialAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDAB1EDEA39C00117F8D /* OfficialAccount.m */; };
+		D2A9CDAD1EDEA39C00117F8D /* OfficialAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDAB1EDEA39C00117F8D /* OfficialAccount.m */; };
+		D2A9CDB01EDEA48A00117F8D /* OfficialAccountMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDAF1EDEA48A00117F8D /* OfficialAccountMenu.m */; };
+		D2A9CDB11EDEA48A00117F8D /* OfficialAccountMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDAF1EDEA48A00117F8D /* OfficialAccountMenu.m */; };
+		D2A9CDB41EDEB9F500117F8D /* OfficialAccountMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDB31EDEB9F500117F8D /* OfficialAccountMenuView.m */; };
+		D2A9CDB51EDEB9F500117F8D /* OfficialAccountMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDB31EDEB9F500117F8D /* OfficialAccountMenuView.m */; };
+		D2A9CDEB1EDFFC9F00117F8D /* OfficialAccountsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDEA1EDFFC9F00117F8D /* OfficialAccountsDetailViewController.m */; };
+		D2A9CDEC1EDFFC9F00117F8D /* OfficialAccountsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDEA1EDFFC9F00117F8D /* OfficialAccountsDetailViewController.m */; };
+		D2A9CDEF1EE00B5500117F8D /* OfficialAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDEE1EE00B5500117F8D /* OfficialAccountCell.m */; };
+		D2A9CDF01EE00B5500117F8D /* OfficialAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDEE1EE00B5500117F8D /* OfficialAccountCell.m */; };
+		D2A9CDF31EE029C500117F8D /* OfficialAccountMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDF21EE029C500117F8D /* OfficialAccountMessage.m */; };
+		D2A9CDF41EE029C500117F8D /* OfficialAccountMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDF21EE029C500117F8D /* OfficialAccountMessage.m */; };
+		D2A9CDF71EE02A4D00117F8D /* NSDictionary+SafeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDF61EE02A4D00117F8D /* NSDictionary+SafeValue.m */; };
+		D2A9CDF81EE02A4D00117F8D /* NSDictionary+SafeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDF61EE02A4D00117F8D /* NSDictionary+SafeValue.m */; };
+		D2A9CDFB1EE15F2900117F8D /* OfficialAccountsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDFA1EE15F2900117F8D /* OfficialAccountsManager.m */; };
+		D2A9CDFC1EE15F2900117F8D /* OfficialAccountsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDFA1EE15F2900117F8D /* OfficialAccountsManager.m */; };
 		D2B3DAC51BF1D7B700913BD5 /* icon_002_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3DAA51BF1D7B700913BD5 /* icon_002_cover.png */; };
 		D2B3DAC61BF1D7B700913BD5 /* icon_002.gif in Resources */ = {isa = PBXBuildFile; fileRef = D2B3DAA61BF1D7B700913BD5 /* icon_002.gif */; };
 		D2B3DAC71BF1D7B700913BD5 /* icon_007_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3DAA71BF1D7B700913BD5 /* icon_007_cover.png */; };
@@ -888,12 +910,34 @@
 		D29A6BB41B7209C1002324BB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D29A6BB71B720A62002324BB /* AppDelegate+Parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Parse.h"; sourceTree = "<group>"; };
 		D29A6BB81B720A62002324BB /* AppDelegate+Parse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Parse.m"; sourceTree = "<group>"; };
+		D29AA9141ED69B8700415EA6 /* OfficialAccountsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountsListViewController.h; sourceTree = "<group>"; };
+		D29AA9151ED69B8700415EA6 /* OfficialAccountsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountsListViewController.m; sourceTree = "<group>"; };
+		D29AA9181ED6B2F700415EA6 /* OfficialAccountsToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountsToolBar.h; sourceTree = "<group>"; };
+		D29AA9191ED6B2F700415EA6 /* OfficialAccountsToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountsToolBar.m; sourceTree = "<group>"; };
+		D29AA91C1ED6B32500415EA6 /* OfficialAccountsChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountsChatViewController.h; sourceTree = "<group>"; };
+		D29AA91D1ED6B32500415EA6 /* OfficialAccountsChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountsChatViewController.m; sourceTree = "<group>"; };
 		D2A9107A1C83E7890025AD0A /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
 		D2A9107B1C83E7890025AD0A /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
 		D2A9107C1C83E7890025AD0A /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 29.png; sourceTree = "<group>"; };
 		D2A9107D1C83E7890025AD0A /* 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 57.png; sourceTree = "<group>"; };
 		D2A9107E1C83E7890025AD0A /* 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58.png; sourceTree = "<group>"; };
 		D2A9107F1C83E7890025AD0A /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80.png; sourceTree = "<group>"; };
+		D2A9CDAA1EDEA39C00117F8D /* OfficialAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccount.h; sourceTree = "<group>"; };
+		D2A9CDAB1EDEA39C00117F8D /* OfficialAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccount.m; sourceTree = "<group>"; };
+		D2A9CDAE1EDEA48A00117F8D /* OfficialAccountMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountMenu.h; sourceTree = "<group>"; };
+		D2A9CDAF1EDEA48A00117F8D /* OfficialAccountMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountMenu.m; sourceTree = "<group>"; };
+		D2A9CDB21EDEB9F500117F8D /* OfficialAccountMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountMenuView.h; sourceTree = "<group>"; };
+		D2A9CDB31EDEB9F500117F8D /* OfficialAccountMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountMenuView.m; sourceTree = "<group>"; };
+		D2A9CDE91EDFFC9F00117F8D /* OfficialAccountsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountsDetailViewController.h; sourceTree = "<group>"; };
+		D2A9CDEA1EDFFC9F00117F8D /* OfficialAccountsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountsDetailViewController.m; sourceTree = "<group>"; };
+		D2A9CDED1EE00B5400117F8D /* OfficialAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountCell.h; sourceTree = "<group>"; };
+		D2A9CDEE1EE00B5500117F8D /* OfficialAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountCell.m; sourceTree = "<group>"; };
+		D2A9CDF11EE029C500117F8D /* OfficialAccountMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountMessage.h; sourceTree = "<group>"; };
+		D2A9CDF21EE029C500117F8D /* OfficialAccountMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountMessage.m; sourceTree = "<group>"; };
+		D2A9CDF51EE02A4D00117F8D /* NSDictionary+SafeValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeValue.h"; sourceTree = "<group>"; };
+		D2A9CDF61EE02A4D00117F8D /* NSDictionary+SafeValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeValue.m"; sourceTree = "<group>"; };
+		D2A9CDF91EE15F2900117F8D /* OfficialAccountsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountsManager.h; sourceTree = "<group>"; };
+		D2A9CDFA1EE15F2900117F8D /* OfficialAccountsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountsManager.m; sourceTree = "<group>"; };
 		D2B1B9EC1C3B800E0087A74F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		D2B1B9EE1C3B80290087A74F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D2B3DAA51BF1D7B700913BD5 /* icon_002_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_002_cover.png; sourceTree = "<group>"; };
@@ -1629,6 +1673,8 @@
 				D29A6BA81B7208DF002324BB /* UIImageView+HeadImage.m */,
 				909110E9192EEAED008A48AA /* UIResponder+Router.h */,
 				909110EA192EEAED008A48AA /* UIResponder+Router.m */,
+				D2A9CDF51EE02A4D00117F8D /* NSDictionary+SafeValue.h */,
+				D2A9CDF61EE02A4D00117F8D /* NSDictionary+SafeValue.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1644,6 +1690,7 @@
 				3C914D7019514BBD0002DAD3 /* ChatGroup */,
 				9003D7761939D8D000DC38A4 /* Chat */,
 				9003D84D1939D8D000DC38A4 /* Contacts */,
+				D29AA9131ED69B4800415EA6 /* OfficialAccounts */,
 				90911125192EEBB8008A48AA /* Settings */,
 				90911134192EEC91008A48AA /* LoginViewController.h */,
 				90911135192EEC91008A48AA /* LoginViewController.m */,
@@ -1736,6 +1783,33 @@
 				90B42A361B65E62C00968342 /* RobotManager.m */,
 			);
 			path = Robot;
+			sourceTree = "<group>";
+		};
+		D29AA9131ED69B4800415EA6 /* OfficialAccounts */ = {
+			isa = PBXGroup;
+			children = (
+				D2A9CDAA1EDEA39C00117F8D /* OfficialAccount.h */,
+				D2A9CDAB1EDEA39C00117F8D /* OfficialAccount.m */,
+				D2A9CDF11EE029C500117F8D /* OfficialAccountMessage.h */,
+				D2A9CDF21EE029C500117F8D /* OfficialAccountMessage.m */,
+				D2A9CDAE1EDEA48A00117F8D /* OfficialAccountMenu.h */,
+				D2A9CDAF1EDEA48A00117F8D /* OfficialAccountMenu.m */,
+				D2A9CDB21EDEB9F500117F8D /* OfficialAccountMenuView.h */,
+				D2A9CDB31EDEB9F500117F8D /* OfficialAccountMenuView.m */,
+				D29AA9181ED6B2F700415EA6 /* OfficialAccountsToolBar.h */,
+				D29AA9191ED6B2F700415EA6 /* OfficialAccountsToolBar.m */,
+				D2A9CDED1EE00B5400117F8D /* OfficialAccountCell.h */,
+				D2A9CDEE1EE00B5500117F8D /* OfficialAccountCell.m */,
+				D29AA9141ED69B8700415EA6 /* OfficialAccountsListViewController.h */,
+				D29AA9151ED69B8700415EA6 /* OfficialAccountsListViewController.m */,
+				D29AA91C1ED6B32500415EA6 /* OfficialAccountsChatViewController.h */,
+				D29AA91D1ED6B32500415EA6 /* OfficialAccountsChatViewController.m */,
+				D2A9CDE91EDFFC9F00117F8D /* OfficialAccountsDetailViewController.h */,
+				D2A9CDEA1EDFFC9F00117F8D /* OfficialAccountsDetailViewController.m */,
+				D2A9CDF91EE15F2900117F8D /* OfficialAccountsManager.h */,
+				D2A9CDFA1EE15F2900117F8D /* OfficialAccountsManager.m */,
+			);
+			path = OfficialAccounts;
 			sourceTree = "<group>";
 		};
 		D2A910791C83E7890025AD0A /* appicon */ = {
@@ -2552,6 +2626,7 @@
 				846D77111E6FB52A0091DC94 /* ChatGroupDetailViewController.m in Sources */,
 				846D77121E6FB52A0091DC94 /* GroupListViewController.m in Sources */,
 				846D77131E6FB52A0091DC94 /* EMAlertView.m in Sources */,
+				D2A9CDF81EE02A4D00117F8D /* NSDictionary+SafeValue.m in Sources */,
 				846D77141E6FB52A0091DC94 /* RobotChatViewController.m in Sources */,
 				846D77151E6FB52A0091DC94 /* ConversationListController.m in Sources */,
 				846D77161E6FB52A0091DC94 /* EMVideoInfoViewController.m in Sources */,
@@ -2561,13 +2636,17 @@
 				846D771A1E6FB52A0091DC94 /* UserProfileEditViewController.m in Sources */,
 				846D771B1E6FB52A0091DC94 /* EMChooseViewController.m in Sources */,
 				846D771C1E6FB52A0091DC94 /* EMChatroomAdminsViewController.m in Sources */,
+				D2A9CDF01EE00B5500117F8D /* OfficialAccountCell.m in Sources */,
 				846D771D1E6FB52A0091DC94 /* ContactListSelectViewController.m in Sources */,
+				D29AA9171ED69B8700415EA6 /* OfficialAccountsListViewController.m in Sources */,
 				846D771E1E6FB52A0091DC94 /* BaseTableViewCell.m in Sources */,
+				D2A9CDF41EE029C500117F8D /* OfficialAccountMessage.m in Sources */,
 				846D771F1E6FB52A0091DC94 /* ChatViewController.m in Sources */,
 				846D77211E6FB52A0091DC94 /* EMRobotChatTextBubbleView.m in Sources */,
 				846D77221E6FB52A0091DC94 /* BaseViewController.m in Sources */,
 				846D77231E6FB52A0091DC94 /* PublicGroupListViewController.m in Sources */,
 				846D77241E6FB52A0091DC94 /* DemoCallManager.m in Sources */,
+				D2A9CDB11EDEA48A00117F8D /* OfficialAccountMenu.m in Sources */,
 				846D77251E6FB52A0091DC94 /* EMRotbotChatViewCell.m in Sources */,
 				846D77281E6FB52A0091DC94 /* UIViewController+SearchController.m in Sources */,
 				846D77291E6FB52A0091DC94 /* CallSettingViewController.m in Sources */,
@@ -2583,9 +2662,11 @@
 				846D77341E6FB52A0091DC94 /* GroupSettingViewController.m in Sources */,
 				846D77351E6FB52A0091DC94 /* XHMessageTextView.m in Sources */,
 				846D77361E6FB52A0091DC94 /* ApplyViewController.m in Sources */,
+				D2A9CDB51EDEB9F500117F8D /* OfficialAccountMenuView.m in Sources */,
 				846D77371E6FB52A0091DC94 /* ChatroomDetailViewController.m in Sources */,
 				846D77381E6FB52A0091DC94 /* main.m in Sources */,
 				846D77391E6FB52A0091DC94 /* PushNotificationViewController.m in Sources */,
+				D2A9CDAD1EDEA39C00117F8D /* OfficialAccount.m in Sources */,
 				846D773A1E6FB52A0091DC94 /* UserProfileViewController.m in Sources */,
 				90AFCFD91ECE9B45007BBD33 /* AppDelegate+ShareFiles.m in Sources */,
 				846D773B1E6FB52A0091DC94 /* EMChatroomMembersViewController.m in Sources */,
@@ -2595,7 +2676,9 @@
 				846D773F1E6FB52A0091DC94 /* ContactListViewController.m in Sources */,
 				846D77401E6FB52A0091DC94 /* AppDelegate+UMeng.m in Sources */,
 				846D77411E6FB52A0091DC94 /* BlackListViewController.m in Sources */,
+				D2A9CDFC1EE15F2900117F8D /* OfficialAccountsManager.m in Sources */,
 				90AFCFDB1ECE9B45007BBD33 /* ChatViewController+ShareFile.m in Sources */,
+				D2A9CDEC1EDFFC9F00117F8D /* OfficialAccountsDetailViewController.m in Sources */,
 				846D77421E6FB52A0091DC94 /* SettingsViewController.m in Sources */,
 				846D77431E6FB52A0091DC94 /* AppDelegate+Parse.m in Sources */,
 				846D7BC11E7805530091DC94 /* RedPacketUserConfig.m in Sources */,
@@ -2614,6 +2697,7 @@
 				846D774E1E6FB52A0091DC94 /* RealtimeSearchUtil.m in Sources */,
 				846D774F1E6FB52A0091DC94 /* TTGlobalUICommon.m in Sources */,
 				846D77501E6FB52A0091DC94 /* GettingMoreFooterView.m in Sources */,
+				D29AA91B1ED6B2F700415EA6 /* OfficialAccountsToolBar.m in Sources */,
 				846D77511E6FB52A0091DC94 /* AppDelegate+EaseMobDebug.m in Sources */,
 				846D77521E6FB52A0091DC94 /* ChatroomListViewController.m in Sources */,
 				846D77531E6FB52A0091DC94 /* EMSearchResultController.m in Sources */,
@@ -2622,6 +2706,7 @@
 				846D77561E6FB52A0091DC94 /* ChatDemoHelper.m in Sources */,
 				846D77581E6FB52A0091DC94 /* EditNicknameViewController.m in Sources */,
 				846D77591E6FB52A0091DC94 /* EMGroupAdminsViewController.m in Sources */,
+				D29AA91F1ED6B32500415EA6 /* OfficialAccountsChatViewController.m in Sources */,
 				846D775A1E6FB52A0091DC94 /* MainViewController.m in Sources */,
 				846D775B1E6FB52A0091DC94 /* EMNavigationController.m in Sources */,
 				846D775C1E6FB52A0091DC94 /* EMTextView.m in Sources */,
@@ -2651,11 +2736,13 @@
 				3A386ED41DE5539C000F3D8E /* EMVideoInfoViewController.m in Sources */,
 				D2F7691F1CBF42DB009778FB /* SearchChatViewController.m in Sources */,
 				3C6BBA0619419EBD00A64684 /* EMRemarkImageView.m in Sources */,
+				D2A9CDF71EE02A4D00117F8D /* NSDictionary+SafeValue.m in Sources */,
 				D29A6BAC1B72090F002324BB /* UserProfileManager.m in Sources */,
 				D29A6BAF1B720960002324BB /* UserProfileEditViewController.m in Sources */,
 				3C5EB36319407CAF005C7704 /* EMChooseViewController.m in Sources */,
 				3A2C3A251E23AF5000DCD9BE /* EMChatroomAdminsViewController.m in Sources */,
 				D25978A11BCD072100148BF6 /* ContactListSelectViewController.m in Sources */,
+				D2A9CDB01EDEA48A00117F8D /* OfficialAccountMenu.m in Sources */,
 				3C3527361931D1BE00385240 /* BaseTableViewCell.m in Sources */,
 				9003D86E1939D8D000DC38A4 /* ChatViewController.m in Sources */,
 				3A22B1B71E2F7D8F0001D791 /* (null) in Sources */,
@@ -2668,16 +2755,21 @@
 				846D7BB01E7805530091DC94 /* AppDelegate+Redpacket.m in Sources */,
 				3A635C151DF696AC005C995E /* CallSettingViewController.m in Sources */,
 				9003D9141939D8D000DC38A4 /* AddFriendViewController.m in Sources */,
+				D29AA91A1ED6B2F700415EA6 /* OfficialAccountsToolBar.m in Sources */,
 				D25AA3591E8D29C8006BF820 /* EMGroupInfoViewController.m in Sources */,
 				3AF6A65D1E1F84360022E835 /* EMGroupMutesViewController.m in Sources */,
 				D2F7691C1CBF3F26009778FB /* SearchMessageViewController.m in Sources */,
+				D2A9CDFB1EE15F2900117F8D /* OfficialAccountsManager.m in Sources */,
+				D29AA91E1ED6B32500415EA6 /* OfficialAccountsChatViewController.m in Sources */,
 				3A2C3A281E23AF5000DCD9BE /* EMChatroomMutesViewController.m in Sources */,
 				3C914D8519514BBD0002DAD3 /* ContactSelectionViewController.m in Sources */,
 				283403091A9EBB8200B7DE9B /* GroupSubjectChangingViewController.m in Sources */,
 				D29A6BA91B7208DF002324BB /* UIImageView+HeadImage.m in Sources */,
 				3A2C3A261E23AF5000DCD9BE /* EMChatroomBansViewController.m in Sources */,
+				D2A9CDF31EE029C500117F8D /* OfficialAccountMessage.m in Sources */,
 				9003D9151939D8D000DC38A4 /* ApplyFriendCell.m in Sources */,
 				3A6764B41E5D2C6800ABF196 /* GroupSettingViewController.m in Sources */,
+				D2A9CDEB1EDFFC9F00117F8D /* OfficialAccountsDetailViewController.m in Sources */,
 				3C6BBA091941A58C00A64684 /* XHMessageTextView.m in Sources */,
 				D2D6881E1EC2F4E600CA1905 /* EMGroupSharedFilesViewController.m in Sources */,
 				9003D9161939D8D000DC38A4 /* ApplyViewController.m in Sources */,
@@ -2686,6 +2778,7 @@
 				3C117122197D243B00E2DBEC /* PushNotificationViewController.m in Sources */,
 				90AFCFD81ECE9B45007BBD33 /* AppDelegate+ShareFiles.m in Sources */,
 				D2CB225C1B60CB08001BC741 /* UserProfileViewController.m in Sources */,
+				D2A9CDEF1EE00B5500117F8D /* OfficialAccountCell.m in Sources */,
 				3A2C3A271E23AF5000DCD9BE /* EMChatroomMembersViewController.m in Sources */,
 				90985E481A8A08D400976DD6 /* InvitationManager.m in Sources */,
 				3AF6A65A1E1F80570022E835 /* EMGroupBansViewController.m in Sources */,
@@ -2715,10 +2808,13 @@
 				90CE5C121B43C8E500810187 /* AppDelegate+EaseMobDebug.m in Sources */,
 				28BFD6371B01D40500D0ADEC /* ChatroomListViewController.m in Sources */,
 				3AA412E81DDEDB2600317D72 /* EMSearchResultController.m in Sources */,
+				D2A9CDB41EDEB9F500117F8D /* OfficialAccountMenuView.m in Sources */,
 				90AFCFDA1ECE9B45007BBD33 /* ChatViewController+ShareFile.m in Sources */,
 				90517D671A5C3C1F008F1315 /* AppDelegate+EaseMob.m in Sources */,
 				3C13D94E1A120BA200903622 /* ContactView.m in Sources */,
 				D2FFDB921C1687A30031425A /* ChatDemoHelper.m in Sources */,
+				D29AA9161ED69B8700415EA6 /* OfficialAccountsListViewController.m in Sources */,
+				D2A9CDAC1EDEA39C00117F8D /* OfficialAccount.m in Sources */,
 				D2BF98B31AEDD780009E0D5C /* EditNicknameViewController.m in Sources */,
 				3AD0FB9A1E1E7267001F3957 /* EMGroupAdminsViewController.m in Sources */,
 				90911145192EEE6E008A48AA /* MainViewController.m in Sources */,
