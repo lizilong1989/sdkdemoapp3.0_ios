@@ -9,10 +9,13 @@
 #import "OfficialAccountsDetailViewController.h"
 
 #import "OfficialAccount.h"
+#import "OfficialAccountsManager.h"
+#import "OfficialAccountsChatViewController.h"
 
 @interface OfficialAccountsDetailViewController ()
 {
     OfficialAccount *_offcialAccount;
+    BOOL _isFollow;
 }
 
 @property (nonatomic, strong) UIView *footerView;
@@ -21,18 +24,25 @@
 
 @implementation OfficialAccountsDetailViewController
 
-- (instancetype)initWithOfficialAccount:(OfficialAccount *)officialAccount
+- (instancetype)initWithOfficialAccount:(OfficialAccount *)officialAccount isFollow:(BOOL)isFollow
 {
     self = [super init];
     if (self) {
         _offcialAccount = officialAccount;
+        _isFollow = isFollow;
     }
     return self;
+}
+
+- (OfficialAccount*)officialAccount
+{
+    return _offcialAccount;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = NSLocalizedString(@"title.officialAccount", @"Official Account");
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.tableFooterView = self.footerView;
     self.tableView.allowsSelection = NO;
@@ -69,13 +79,19 @@
         line.backgroundColor = [UIColor lightGrayColor];
         [_footerView addSubview:line];
         
-        UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, _footerView.frame.size.width - 20, 45)];
-        [cancelButton setBackgroundColor:RGBACOLOR(0xfe, 0x64, 0x50, 1)];
-        NSString *logoutButtonTitle = @"取消关注";
-        [cancelButton setTitle:logoutButtonTitle forState:UIControlStateNormal];
-        [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [cancelButton addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
-        [_footerView addSubview:cancelButton];
+        UIButton *followButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 20, _footerView.frame.size.width - 20, 45)];
+        if (!_isFollow) {
+            [followButton setBackgroundColor:RGBACOLOR(0x1f, 0xb9, 0x22, 1)];
+            [followButton setTitle:NSLocalizedString(@"officialAccount.follow", @"Follow") forState:UIControlStateNormal];
+            [followButton addTarget:self action:@selector(followAction) forControlEvents:UIControlEventTouchUpInside];
+        } else {
+            [followButton setTitle:NSLocalizedString(@"officialAccount.unfollow", @"UnFollow") forState:UIControlStateNormal];
+            [followButton setBackgroundColor:RGBACOLOR(0xfe, 0x64, 0x50, 1)];
+            [followButton addTarget:self action:@selector(unFollowAction) forControlEvents:UIControlEventTouchUpInside];
+        }
+        
+        [followButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_footerView addSubview:followButton];
     }
     
     return _footerView;
@@ -102,12 +118,14 @@
     }
     if (indexPath.row == 0) {
         [cell.imageView sd_setImageWithURL:[NSURL URLWithString:_offcialAccount.logo] placeholderImage:[UIImage imageNamed:@"chatListCellHead"]];
+        cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+        cell.imageView.layer.masksToBounds = YES;
     } else if (indexPath.row == 1) {
-        cell.textLabel.text = @"名称";
-        cell.detailTextLabel.text = _offcialAccount.name;
+        cell.textLabel.text = NSLocalizedString(@"officialAccount.name", @"Name");
+        cell.detailTextLabel.text = _offcialAccount.name.length > 0 ? _offcialAccount.name : _offcialAccount.paid;
     } else if (indexPath.row == 2) {
-        cell.textLabel.text = @"功能介绍";
-        cell.detailTextLabel.text = _offcialAccount.description;
+        cell.textLabel.text = NSLocalizedString(@"officialAccount.desc", @"Description");
+        cell.detailTextLabel.text = _offcialAccount.desc;
     }
     return cell;
 }
@@ -129,9 +147,55 @@
 
 #pragma mark - action
 
-- (void)cancelAction
+- (void)followAction
 {
+    [self hideHud];
+    [self showHudInView:self.view hint:@"Follow..."];
+    __weak typeof(self) weakSelf = self;
+    
+    dispatch_block_t block = ^{
+        [[OfficialAccountsManager sharedInstance] getOfficialAccountsWithPaid:[weakSelf officialAccount].paid
+                                                                isIncludeMenu:YES
+                                                                   completion:^(OfficialAccount *aOfficialAccount, NSError *aError) {
+                                                                       [weakSelf hideHud];
+                                                                       if (!aError) {
+                                                                           NSMutableArray *array = [NSMutableArray arrayWithArray:[weakSelf.navigationController viewControllers]];
+                                                                           if ([array count] > 0) {
+                                                                               [array removeLastObject];
+                                                                           }
+                                                                           OfficialAccountsChatViewController *chatView = [[OfficialAccountsChatViewController alloc] initWithOfficialAccount:aOfficialAccount];
+                                                                           [array addObject:chatView];
+                                                                           [weakSelf.navigationController setViewControllers:array animated:YES];
+                                                                       }
+                                                                   }];
+    };
+    
+    [[OfficialAccountsManager sharedInstance] followOfficialAccountsWithPaid:_offcialAccount.paid
+                                                                  completion:^(NSError *aError) {
+                                                                      [weakSelf hideHud];
+                                                                      if (!aError) {
+                                                                          block();
+                                                                      } else {
+                                                                          [weakSelf showHint:@"Follow failed"];
+                                                                      }
+                                                                }];
+}
 
+- (void)unFollowAction
+{
+    [self hideHud];
+    [self showHudInView:self.view hint:@"unFollow..."];
+    __weak typeof(self) weakSelf = self;
+    [[OfficialAccountsManager sharedInstance] unFollowOfficialAccountsWithPaid:_offcialAccount.paid
+                                                                    completion:^(NSError *aError) {
+                                                                        [weakSelf hideHud];
+                                                                        if (!aError) {
+                                                                            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+                                                                            [[EMClient sharedClient].chatManager deleteConversation:[weakSelf officialAccount].agentuser isDeleteMessages:YES completion:nil];
+                                                                        } else {
+                                                                             [weakSelf showHint:@"unFollow failed"];
+                                                                        }
+                                                                    }];
 }
 
 @end

@@ -21,7 +21,7 @@
         _name = [aParameters safeStringValueForKey:@"name"];
         _desc = [aParameters safeStringValueForKey:@"description"];
         _logo = [aParameters safeStringValueForKey:@"logo"];
-        _agentuser = [aParameters safeStringValueForKey:@"agentuser"];
+        _agentuser = [[aParameters safeStringValueForKey:@"agentUser"] lowercaseString];
         
         NSArray *menus = [aParameters safeObjectForKey:@"menu"];
         NSMutableArray *array = [NSMutableArray array];

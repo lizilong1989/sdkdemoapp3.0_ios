@@ -11,6 +11,6 @@
 @class OfficialAccount;
 @interface OfficialAccountsDetailViewController : UITableViewController
 
-- (instancetype)initWithOfficialAccount:(OfficialAccount *)officialAccount;
+- (instancetype)initWithOfficialAccount:(OfficialAccount *)officialAccount isFollow:(BOOL)isFollow;
 
 @end

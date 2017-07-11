@@ -10,13 +10,11 @@
 
 #import "BaseTableViewCell.h"
 #import "OfficialAccount.h"
-#import "OfficialAccountsChatViewController.h"
+#import "OfficialAccountsDetailViewController.h"
 #import "OfficialAccountsManager.h"
+#import "OfficialAccountsChatViewController.h"
 
 @interface OfficialAccountsListViewController ()
-{
-    NSInteger page;
-}
 
 @end
 
@@ -26,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"Official Accounts";
+    self.title = NSLocalizedString(@"title.officialAccountsList", @"Official Accounts");
     
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     backButton.accessibilityIdentifier = @"back";
@@ -34,15 +32,6 @@
     [backButton addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backItem];
-    
-    UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [addButton setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-    [addButton addTarget:self action:@selector(followAction) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithCustomView:addButton];
-    [self.navigationItem setRightBarButtonItem:addItem];
-    
-    self.page = 1;
-    self.showRefreshHeader = YES;
 //    [self setupSearchController];
     
     [self tableViewDidTriggerHeaderRefresh];
@@ -99,9 +88,25 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    
     OfficialAccount *officialAccount = [self.dataArray objectAtIndex:indexPath.row];
-    OfficialAccountsChatViewController *chatview = [[OfficialAccountsChatViewController alloc] initWithOfficialAccount:officialAccount];
-    [self.navigationController pushViewController:chatview animated:YES];
+    if ([[OfficialAccountsManager sharedInstance] isOfficialAccountsWithPaid:officialAccount.paid]) {
+        [self hideHud];
+        [self showHudInView:self.view hint:NSLocalizedString(@"loadData", @"Load data...")];
+        __weak typeof(self) weakSelf = self;
+        [[OfficialAccountsManager sharedInstance] getOfficialAccountsWithPaid:officialAccount.paid
+                                                                isIncludeMenu:YES
+                                                                   completion:^(OfficialAccount *aOfficialAccount, NSError *aError) {
+                                                                       [weakSelf hideHud];
+                                                                       if (!aError) {
+                                                                           OfficialAccountsChatViewController *chatView = [[OfficialAccountsChatViewController alloc] initWithOfficialAccount:aOfficialAccount];
+                                                                           [weakSelf.navigationController pushViewController:chatView animated:YES];
+                                                                       }
+                                                                   }];
+    } else {
+        OfficialAccountsDetailViewController *detailView = [[OfficialAccountsDetailViewController alloc] initWithOfficialAccount:officialAccount isFollow:NO];
+        [self.navigationController pushViewController:detailView animated:YES];
+    }
 }
 
 #pragma mark - action
@@ -131,27 +136,27 @@
     [self hideHud];
     [self showHudInView:self.view hint:NSLocalizedString(@"loadData", @"Load data...")];
     __weak typeof(self) weakSelf = self;
-    [[OfficialAccountsManager sharedInstance] fetchMyOfficialAccountsWithPage:aPage
-                                                                     pagesize:20
-                                                                   completion:^(NSArray *aOfficialAccounts, NSError *aError) {
-                                                                       if (weakSelf) {
-                                                                           OfficialAccountsListViewController *strongSelf = weakSelf;
-                                                                           [strongSelf hideHud];
-                                                                           if (!aError) {
-                                                                               if (aIsHeader) {
-                                                                                   [strongSelf.dataArray removeAllObjects];
-                                                                               }
-                                                                               [strongSelf.dataArray addObjectsFromArray:aOfficialAccounts];
-                                                                               [strongSelf.tableView reloadData];
-                                                                               if (aOfficialAccounts.count > 0) {
-                                                                                   strongSelf.showRefreshFooter = YES;
-                                                                               } else {
-                                                                                   strongSelf.showRefreshFooter = NO;
-                                                                               }
-                                                                           }
-                                                                           [strongSelf tableViewDidFinishTriggerHeader:aIsHeader reload:NO];
-                                                                       }
-                                                                   }];
+    [[OfficialAccountsManager sharedInstance] fetchOfficialAccountsWithPage:aPage
+                                                                   pagesize:10
+                                                                 completion:^(NSArray *aOfficialAccounts, NSError *aError) {
+                                                                     if (weakSelf) {
+                                                                         OfficialAccountsListViewController *strongSelf = weakSelf;
+                                                                         [strongSelf hideHud];
+                                                                         if (!aError) {
+                                                                             if (aIsHeader) {
+                                                                                 [strongSelf.dataArray removeAllObjects];
+                                                                             }
+                                                                             [strongSelf.dataArray addObjectsFromArray:aOfficialAccounts];
+                                                                             [strongSelf.tableView reloadData];
+                                                                             if (aOfficialAccounts.count > 0) {
+                                                                                 strongSelf.showRefreshFooter = YES;
+                                                                             } else {
+                                                                                 strongSelf.showRefreshFooter = NO;
+                                                                             }
+                                                                         }
+                                                                         [strongSelf tableViewDidFinishTriggerHeader:aIsHeader reload:NO];
+                                                                     }
+                                                                 }];
 }
 
 @end

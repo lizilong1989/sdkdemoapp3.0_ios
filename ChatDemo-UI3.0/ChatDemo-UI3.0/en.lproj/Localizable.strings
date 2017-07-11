@@ -388,6 +388,9 @@
 "title.robotlist" = "Robot List";
 "title.profile" = "Profile";
 "title.createChatroom" = "Create a chatroom";
+"title.officialAccount" = "Official Account";
+"title.myOfficialAccounts" = "Official My Accounts";
+"title.officialAccountsList" = "Official Accounts";
 
 //setting
 "setting.autoLogin" = "Automatic Login";
@@ -455,3 +458,10 @@
 "NSDateCategory.text12" = "aa hh:mm";
 "NSDateCategory.text13" = "M-d HH:mm";
 "NSDateCategory.text14" = "today %@";
+
+//OfficialAccount
+"officialAccount.name" = "Name";
+"officialAccount.desc" = "Description";
+"officialAccount.follow" = "Follow";
+"officialAccount.unfollow" = "UnFollow";
+"officialAccount.origin" = "Origin";

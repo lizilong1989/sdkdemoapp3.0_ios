@@ -21,6 +21,8 @@
 
 @property (nonatomic, weak) id<OfficialAccountMenuViewDelegate> delegate;
 
-- (instancetype)initWithMenu:(OfficialAccountMenu *)menu;
+- (instancetype)initWithMenu:(OfficialAccountMenu *)menu
+                        left:(CGFloat)left
+                       width:(CGFloat)width;
 
 @end

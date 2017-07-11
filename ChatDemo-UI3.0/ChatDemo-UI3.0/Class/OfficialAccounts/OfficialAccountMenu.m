@@ -18,7 +18,7 @@
     if (self) {
         _title = [parameter safeStringValueForKey:@"title"];
         _action = [parameter safeStringValueForKey:@"action"];
-        _eventid = [parameter safeStringValueForKey:@"eventid"];
+        _eventid = [parameter safeStringValueForKey:@"eventId"];
         _url = [parameter safeStringValueForKey:@"url"];
         [self setupSubMenu:[parameter safeObjectForKey:@"subMenu"]];
     }

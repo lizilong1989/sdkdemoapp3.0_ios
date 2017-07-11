@@ -386,7 +386,9 @@
 "title.robotlist" = "环信助手";
 "title.profile" = "详细资料";
 "title.createChatroom" = "创建聊天室";
-
+"title.officialAccount" = "公众号";
+"title.myOfficialAccounts" = "我关注的公众号";
+"title.officialAccountsList" = "公众号列表";
 
 //setting
 "setting.autoLogin" = "自动登录";
@@ -454,3 +456,10 @@
 "NSDateCategory.text12" = "晚上hh:mm";
 "NSDateCategory.text13" = "昨天HH:mm";
 "NSDateCategory.text14" = "今天 %@";
+
+//OfficialAccount
+"officialAccount.name" = "名称";
+"officialAccount.desc" = "功能介绍";
+"officialAccount.follow" = "关注";
+"officialAccount.unfollow" = "取消关注";
+"officialAccount.origin" = "原文";

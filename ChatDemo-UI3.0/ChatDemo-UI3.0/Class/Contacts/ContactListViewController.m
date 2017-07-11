@@ -21,7 +21,7 @@
 #import "RealtimeSearchUtil.h"
 #import "UserProfileManager.h"
 #import "RedPacketChatViewController.h"
-#import "OfficialAccountsListViewController.h"
+#import "OfficialAccountsMyListViewController.h"
 
 #import "BaseTableViewCell.h"
 #import "UIViewController+SearchController.h"
@@ -143,7 +143,7 @@
         }
         else if (indexPath.row == 3) {
             cell.avatarView.image = [UIImage imageNamed:@"EaseUIResource.bundle/group"];
-            cell.titleLabel.text = @"Official Accounts";
+            cell.titleLabel.text = NSLocalizedString(@"title.officialAccount", @"Official Account");
         }
         return cell;
     }
@@ -237,7 +237,7 @@
         }
         else if (row == 3)
         {
-            OfficialAccountsListViewController *controller = [[OfficialAccountsListViewController alloc] initWithStyle:UITableViewStylePlain];
+            OfficialAccountsMyListViewController *controller = [[OfficialAccountsMyListViewController alloc] initWithStyle:UITableViewStylePlain];
             [self.navigationController pushViewController:controller animated:YES];
         }
     }

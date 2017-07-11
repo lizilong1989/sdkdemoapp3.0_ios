@@ -465,6 +465,7 @@
 		D25AA35E1E8D29C8006BF820 /* shape_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D25AA3551E8D29C8006BF820 /* shape_left@2x.png */; };
 		D25AA35F1E8D29C8006BF820 /* shape_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D25AA3561E8D29C8006BF820 /* shape_right@2x.png */; };
 		D26CE39B1C2BD37700697F48 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D26CE39A1C2BD37700697F48 /* Settings.bundle */; };
+		D27C24501EFA4B9A001241D4 /* OfficialAccountWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27C244F1EFA4B9A001241D4 /* OfficialAccountWebViewController.m */; };
 		D29A6BA91B7208DF002324BB /* UIImageView+HeadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D29A6BA81B7208DF002324BB /* UIImageView+HeadImage.m */; };
 		D29A6BAC1B72090F002324BB /* UserProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D29A6BAB1B72090F002324BB /* UserProfileManager.m */; };
 		D29A6BAF1B720960002324BB /* UserProfileEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29A6BAE1B720960002324BB /* UserProfileEditViewController.m */; };
@@ -501,6 +502,8 @@
 		D2A9CDF81EE02A4D00117F8D /* NSDictionary+SafeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDF61EE02A4D00117F8D /* NSDictionary+SafeValue.m */; };
 		D2A9CDFB1EE15F2900117F8D /* OfficialAccountsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDFA1EE15F2900117F8D /* OfficialAccountsManager.m */; };
 		D2A9CDFC1EE15F2900117F8D /* OfficialAccountsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CDFA1EE15F2900117F8D /* OfficialAccountsManager.m */; };
+		D2A9CE571EEF9CCC00117F8D /* OfficialAccountsMyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CE561EEF9CCC00117F8D /* OfficialAccountsMyListViewController.m */; };
+		D2A9CE581EEF9CCC00117F8D /* OfficialAccountsMyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A9CE561EEF9CCC00117F8D /* OfficialAccountsMyListViewController.m */; };
 		D2B3DAC51BF1D7B700913BD5 /* icon_002_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3DAA51BF1D7B700913BD5 /* icon_002_cover.png */; };
 		D2B3DAC61BF1D7B700913BD5 /* icon_002.gif in Resources */ = {isa = PBXBuildFile; fileRef = D2B3DAA61BF1D7B700913BD5 /* icon_002.gif */; };
 		D2B3DAC71BF1D7B700913BD5 /* icon_007_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B3DAA71BF1D7B700913BD5 /* icon_007_cover.png */; };
@@ -899,6 +902,8 @@
 		D25AA3551E8D29C8006BF820 /* shape_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shape_left@2x.png"; sourceTree = "<group>"; };
 		D25AA3561E8D29C8006BF820 /* shape_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shape_right@2x.png"; sourceTree = "<group>"; };
 		D26CE39A1C2BD37700697F48 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		D27C244E1EFA4B9A001241D4 /* OfficialAccountWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountWebViewController.h; sourceTree = "<group>"; };
+		D27C244F1EFA4B9A001241D4 /* OfficialAccountWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountWebViewController.m; sourceTree = "<group>"; };
 		D29A6BA71B7208DF002324BB /* UIImageView+HeadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HeadImage.h"; sourceTree = "<group>"; };
 		D29A6BA81B7208DF002324BB /* UIImageView+HeadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HeadImage.m"; sourceTree = "<group>"; };
 		D29A6BAA1B72090F002324BB /* UserProfileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileManager.h; sourceTree = "<group>"; };
@@ -938,6 +943,8 @@
 		D2A9CDF61EE02A4D00117F8D /* NSDictionary+SafeValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeValue.m"; sourceTree = "<group>"; };
 		D2A9CDF91EE15F2900117F8D /* OfficialAccountsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountsManager.h; sourceTree = "<group>"; };
 		D2A9CDFA1EE15F2900117F8D /* OfficialAccountsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountsManager.m; sourceTree = "<group>"; };
+		D2A9CE551EEF9CCC00117F8D /* OfficialAccountsMyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountsMyListViewController.h; sourceTree = "<group>"; };
+		D2A9CE561EEF9CCC00117F8D /* OfficialAccountsMyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountsMyListViewController.m; sourceTree = "<group>"; };
 		D2B1B9EC1C3B800E0087A74F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		D2B1B9EE1C3B80290087A74F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D2B3DAA51BF1D7B700913BD5 /* icon_002_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_002_cover.png; sourceTree = "<group>"; };
@@ -1802,10 +1809,14 @@
 				D2A9CDEE1EE00B5500117F8D /* OfficialAccountCell.m */,
 				D29AA9141ED69B8700415EA6 /* OfficialAccountsListViewController.h */,
 				D29AA9151ED69B8700415EA6 /* OfficialAccountsListViewController.m */,
+				D2A9CE551EEF9CCC00117F8D /* OfficialAccountsMyListViewController.h */,
+				D2A9CE561EEF9CCC00117F8D /* OfficialAccountsMyListViewController.m */,
 				D29AA91C1ED6B32500415EA6 /* OfficialAccountsChatViewController.h */,
 				D29AA91D1ED6B32500415EA6 /* OfficialAccountsChatViewController.m */,
 				D2A9CDE91EDFFC9F00117F8D /* OfficialAccountsDetailViewController.h */,
 				D2A9CDEA1EDFFC9F00117F8D /* OfficialAccountsDetailViewController.m */,
+				D27C244E1EFA4B9A001241D4 /* OfficialAccountWebViewController.h */,
+				D27C244F1EFA4B9A001241D4 /* OfficialAccountWebViewController.m */,
 				D2A9CDF91EE15F2900117F8D /* OfficialAccountsManager.h */,
 				D2A9CDFA1EE15F2900117F8D /* OfficialAccountsManager.m */,
 			);
@@ -2700,6 +2711,7 @@
 				D29AA91B1ED6B2F700415EA6 /* OfficialAccountsToolBar.m in Sources */,
 				846D77511E6FB52A0091DC94 /* AppDelegate+EaseMobDebug.m in Sources */,
 				846D77521E6FB52A0091DC94 /* ChatroomListViewController.m in Sources */,
+				D2A9CE581EEF9CCC00117F8D /* OfficialAccountsMyListViewController.m in Sources */,
 				846D77531E6FB52A0091DC94 /* EMSearchResultController.m in Sources */,
 				846D77541E6FB52A0091DC94 /* AppDelegate+EaseMob.m in Sources */,
 				846D77551E6FB52A0091DC94 /* ContactView.m in Sources */,
@@ -2744,6 +2756,7 @@
 				D25978A11BCD072100148BF6 /* ContactListSelectViewController.m in Sources */,
 				D2A9CDB01EDEA48A00117F8D /* OfficialAccountMenu.m in Sources */,
 				3C3527361931D1BE00385240 /* BaseTableViewCell.m in Sources */,
+				D2A9CE571EEF9CCC00117F8D /* OfficialAccountsMyListViewController.m in Sources */,
 				9003D86E1939D8D000DC38A4 /* ChatViewController.m in Sources */,
 				3A22B1B71E2F7D8F0001D791 /* (null) in Sources */,
 				906083D91B71F894008574B4 /* EMRobotChatTextBubbleView.m in Sources */,
@@ -2797,6 +2810,7 @@
 				3C6FFA2419A2F5560003EB25 /* DebugViewController.m in Sources */,
 				90B42A381B65E62C00968342 /* RobotManager.m in Sources */,
 				3AF6A6571E1F5BD40022E835 /* EMGroupMembersViewController.m in Sources */,
+				D27C24501EFA4B9A001241D4 /* OfficialAccountWebViewController.m in Sources */,
 				3A386ED21DE5539C000F3D8E /* EMCallViewController.mm in Sources */,
 				D25AA35A1E8D29C8006BF820 /* EMGroupTransferOwnerViewController.m in Sources */,
 				905325CF1932ED8B00F064D7 /* EMSearchBar.m in Sources */,

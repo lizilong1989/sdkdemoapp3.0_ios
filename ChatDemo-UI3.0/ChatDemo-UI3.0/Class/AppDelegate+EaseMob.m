@@ -18,6 +18,7 @@
 #import "LoginViewController.h"
 #import "ChatDemoHelper.h"
 #import "MBProgressHUD.h"
+#import "OfficialAccountsManager.h"
 
 /**
  *  本类中做了EaseMob初始化和推送等操作
@@ -108,6 +109,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         [[ChatDemoHelper shareHelper] asyncGroupFromServer];
         [[ChatDemoHelper shareHelper] asyncConversationFromDB];
         [[ChatDemoHelper shareHelper] asyncPushOptions];
+        [[OfficialAccountsManager sharedInstance] fetchAllMyOfficialAccountsFromServer];
     }
     else{//登陆失败加载登陆页面控制器
         if (self.mainController) {

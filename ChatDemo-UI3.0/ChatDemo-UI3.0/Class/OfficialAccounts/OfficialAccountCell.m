@@ -35,11 +35,10 @@
         [self addSubview:self.imageView];
         [self addSubview:self.textLabel];
         [self.imageView sd_setImageWithURL:[NSURL URLWithString:item.imgUrl]];
+        self.textLabel.text = item.title;
         if (item.showImgInBody == 1) {
-            self.textLabel.text = item.bodyText;
             self.textLabel.textColor = [UIColor whiteColor];
         } else {
-            self.textLabel.text = item.title;
             self.textLabel.textColor = [UIColor blackColor];
         }
     }
@@ -102,6 +101,11 @@
     return self;
 }
 
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
 #pragma mark - getter
 
 - (UIView*)bubbleView
@@ -128,6 +132,9 @@
     CGFloat nextHeight = 0.0;
     NSInteger index = 0;
     for (OfficialAccountMessageItem *item in _officialAccountMessage.body.items) {
+        if (index == 0) {
+            item.showImgInBody = 1;
+        }
         OfficialAccountItemView *itemView = [[OfficialAccountItemView alloc] initWithItem:item];
         itemView.tag = index;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectOfficialAccount:)];
@@ -169,7 +176,7 @@
         NSDictionary *payload = [model.message.ext objectForKey:@"payload"];
         if (payload) {
             NSString *type = [payload objectForKey:@"type"];
-            if ([type isKindOfClass:[NSString class]] && [type isEqualToString:@"img_txt"]) {
+            if ([type isKindOfClass:[NSString class]] && ([type isEqualToString:@"single"] || [type isEqualToString:@"multiple"])) {
                 ret = YES;
             }
         }
@@ -186,8 +193,13 @@
 {
     OfficialAccountMessage *officialAccountMessage = [[OfficialAccountMessage alloc] initWithModel:model];
     CGFloat nextHeight = 0.0;
+    NSInteger index = 0;
     for (OfficialAccountMessageItem *item in officialAccountMessage.body.items) {
+        if (index == 0) {
+            item.showImgInBody = 1;
+        }
         nextHeight += item.showImgInBody == 0 ? 60 : 120;
+        index ++;
     }
     return nextHeight + 20;
 }

@@ -13,6 +13,7 @@
 #import "OfficialAccountMenuView.h"
 #import "EaseChatToolbar.h"
 #import "OfficialAccountsDetailViewController.h"
+#import "OfficialAccountWebViewController.h"
 #import "OfficialAccountCell.h"
 #import "OfficialAccountMessage.h"
 #import "OfficialAccount.h"
@@ -37,7 +38,7 @@
 
 - (instancetype)initWithOfficialAccount:(OfficialAccount *)aOfficialAccount
 {
-    self = [super initWithConversationChatter:aOfficialAccount.paid conversationType:EMConversationTypeChat];
+    self = [super initWithConversationChatter:aOfficialAccount.agentuser conversationType:EMConversationTypeChat];
     if (self) {
         _officialAccount = aOfficialAccount;
     }
@@ -47,19 +48,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = _officialAccount.name.length > 0 ? _officialAccount.name : _officialAccount.agentuser;
     [self setChatToolbar:self.toolBar];
     [self.view addSubview:self.newKeyboardBtn];
     
     [self _setupBarButtonItem];
     
-//    NSDictionary *ext = @{@"em_pa_msg":@(YES),@"payload":@{@"type":@"img_txt",@"resource_id":@"123",@"category":@"push_msg",@"body":@{@"type":@"multiple",@"items":@[@{@"title":@"title",@"imgUrl":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496384788576&di=d4e5096327a004eea840d8fc6d631e56&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fitbbs%2F1408%2F07%2Fc16%2F37177334_1407418754754.jpg",@"showImgInBody":@(1),@"action":@"body",@"bodyText":@"testbody",@"oriUrl":@"http://www.baidu.com"},@{@"title":@"title",@"imgUrl":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496384788576&di=d4e5096327a004eea840d8fc6d631e56&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fitbbs%2F1408%2F07%2Fc16%2F37177334_1407418754754.jpg",@"showImgInBody":@(0),@"action":@"link",@"jumpUrl":@"http://www.baidu.com"}]}}};
-//    
-//    EMMessage *message = [EaseSDKHelper sendTextMessage:@"hello" to:@"hongmei1988" messageType:EMChatTypeChat messageExt:ext];
-//    [self.conversation insertMessage:message error:nil];
+    [self.toolBar setMenus:_officialAccount.menus];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc
+{
+//    [[EMClient sharedClient].chatManager deleteConversation:self.conversation.conversationId isDeleteMessages:NO completion:NULL];
 }
 
 - (void)_setupBarButtonItem
@@ -101,8 +105,9 @@
         _oldKeyboardBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _oldKeyboardBtn.frame = CGRectMake(0, CGRectGetMinY(self.chatToolbar.frame), kDefault_Button_Width, [EaseChatToolbar defaultHeight]);
         _oldKeyboardBtn.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-        [_oldKeyboardBtn setTitle:@"board" forState:UIControlStateNormal];
-        [_oldKeyboardBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_oldKeyboardBtn setImage:[UIImage imageNamed:@"EaseUIResource.bundle/chatBar_keyboard"] forState:UIControlStateNormal];
+//        [_oldKeyboardBtn setTitle:@"board" forState:UIControlStateNormal];
+//        [_oldKeyboardBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_oldKeyboardBtn addTarget:self action:@selector(keyboardBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _oldKeyboardBtn;
@@ -114,8 +119,9 @@
         _newKeyboardBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _newKeyboardBtn.frame = CGRectMake(0, CGRectGetMinY(self.chatToolbar.frame), kDefault_Button_Width, [EaseChatToolbar defaultHeight]);
         _newKeyboardBtn.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-        [_newKeyboardBtn setTitle:@"board" forState:UIControlStateNormal];
-        [_newKeyboardBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_newKeyboardBtn setImage:[UIImage imageNamed:@"EaseUIResource.bundle/chatBar_keyboard"] forState:UIControlStateNormal];
+//        [_newKeyboardBtn setTitle:@"board" forState:UIControlStateNormal];
+//        [_newKeyboardBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_newKeyboardBtn addTarget:self action:@selector(keyboardBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _newKeyboardBtn;
@@ -127,10 +133,6 @@
         _toolBar = [[OfficialAccountsToolBar alloc] initWithFrame:CGRectMake(kDefault_Button_Width, CGRectGetMinY(self.chatToolbar.frame), CGRectGetWidth(self.chatToolbar.frame) - kDefault_Button_Width, CGRectGetHeight(self.chatToolbar.frame))];
         _toolBar.delegate = self;
         _toolBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-        OfficialAccountMenu *menu = [[OfficialAccountMenu alloc] initWithParameter:@{@"title":@"Test1",@"action":@"link",@"url":@"http://www.baidu.com"}];
-        OfficialAccountMenu *menu1 = [[OfficialAccountMenu alloc] initWithParameter:@{@"title":@"Test2",@"subMenu":@[@{@"title":@"Test2_1",@"action":@"link",@"url":@"http://www.baidu.com"},@{@"title":@"Test2_2",@"action":@"link",@"url":@"http://www.baidu.com"}]}];
-        OfficialAccountMenu *menu2 = [[OfficialAccountMenu alloc] initWithParameter:@{@"title":@"Test3",@"action":@"link",@"url":@"http://www.easemob.com"}];
-        [_toolBar setMenus:@[menu, menu1, menu2]];
     }
     return _toolBar;
 }
@@ -156,7 +158,8 @@
     if ([item.action isEqualToString:@"link"]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:item.jumpUrl]];
     } else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:item.oriUrl]];
+        OfficialAccountWebViewController *webView = [[OfficialAccountWebViewController alloc] initWithItem:item];
+        [self.navigationController pushViewController:webView animated:YES];
     }
 }
 
@@ -224,7 +227,7 @@
 - (void)showGroupDetailAction
 {
     [self.view endEditing:YES];
-    OfficialAccountsDetailViewController *detailView = [[OfficialAccountsDetailViewController alloc] initWithOfficialAccount:nil];
+    OfficialAccountsDetailViewController *detailView = [[OfficialAccountsDetailViewController alloc] initWithOfficialAccount:_officialAccount isFollow:YES];
     [self.navigationController pushViewController:detailView animated:YES];
 }
 
@@ -237,12 +240,13 @@
 
 - (void)_dealWithMenu:(OfficialAccountMenu *)menu
 {
-    if (_menuView) {
-        [_menuView removeFromSuperview];
-    }
     if ([menu.action isEqualToString:@"link"]) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:menu.url]];
-    } else if ([menu.action isEqualToString:@"automsg"]) {
+        if (_menuView) {
+            [_menuView removeFromSuperview];
+            _menuView = nil;
+        }
+    } else if ([menu.action isEqualToString:@"auto_msg"]) {
         [[OfficialAccountsManager sharedInstance] autoReplyWithPaid:_officialAccount.paid
                                                             eventId:menu.eventid
                                                          completion:^(NSError *aError) {
@@ -250,14 +254,42 @@
                                                              
                                                              }
                                                          }];
+        if (_menuView) {
+            [_menuView removeFromSuperview];
+            _menuView = nil;
+        }
     } else if ([menu.subMenu count] > 0){
-        _menuView = [[OfficialAccountMenuView alloc] initWithMenu:menu];
-        CGRect frame = _menuView.frame;
-        frame.origin.y = CGRectGetMinY(self.chatToolbar.frame) - CGRectGetHeight(_menuView.frame);
-        _menuView.frame = frame;
-        _menuView.delegate = self;
-        [self.view addSubview:_menuView];
+        if (_menuView) {
+            [_menuView removeFromSuperview];
+            _menuView = nil;
+        } else {
+            NSInteger index = [self _indexWithMenu:menu];
+            CGFloat width = (CGRectGetWidth([UIScreen mainScreen].bounds) - kDefault_Button_Width)/[_officialAccount.menus count];
+            CGFloat left = kDefault_Button_Width + width * index;
+            _menuView = [[OfficialAccountMenuView alloc] initWithMenu:menu left:left width:width];
+            CGRect frame = _menuView.frame;
+            frame.origin.y = CGRectGetMinY(self.chatToolbar.frame) - CGRectGetHeight(_menuView.frame);
+            _menuView.frame = frame;
+            _menuView.delegate = self;
+            [self.view addSubview:_menuView];
+        }
     }
+}
+
+- (NSInteger)_indexWithMenu:(OfficialAccountMenu *)menu
+{
+    NSInteger index = 0;
+    if (menu !=nil) {
+        index = [_officialAccount.menus indexOfObject:menu];
+    }
+    return index;
+}
+
+#pragma mark - override
+
+- (void)sendTextMessage:(NSString *)text
+{
+    [self sendTextMessage:text withExt:@{@"em_pa_msg":@(YES)}];
 }
 
 @end

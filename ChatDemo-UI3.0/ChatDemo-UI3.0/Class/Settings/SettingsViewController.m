@@ -19,6 +19,7 @@
 #import "EditNicknameViewController.h"
 #import "UserProfileEditViewController.h"
 #import "RedpacketViewControl.h"
+#import "OfficialAccountsManager.h"
 
 #if DEMO_CALL == 1
 #import "CallSettingViewController.h"
@@ -308,6 +309,7 @@
     [self showHudInView:self.view hint:NSLocalizedString(@"setting.logoutOngoing", @"loging out...")];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         EMError *error = [[EMClient sharedClient] logout:YES];
+        [[OfficialAccountsManager sharedInstance] clearMyOfficialAccounts];
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf hideHud];
             if (error != nil) {

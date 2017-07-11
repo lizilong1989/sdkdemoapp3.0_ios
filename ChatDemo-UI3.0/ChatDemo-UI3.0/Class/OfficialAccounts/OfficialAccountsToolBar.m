@@ -37,7 +37,10 @@
         _imageButton.userInteractionEnabled = YES;
         [_imageButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_imageButton addTarget:self action:@selector(imageButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        _imageButton.titleLabel.font = [UIFont systemFontOfSize:15];
         [self.contentView addSubview:_imageButton];
+        self.layer.borderWidth = 1.f;
+        self.layer.borderColor = RGBACOLOR(0xf3, 0xf3, 0xf3, 1).CGColor;
     }
     return self;
 }

@@ -17,10 +17,10 @@
     self = [super init];
     if (self) {
         NSDictionary *payload = [model.message.ext safeObjectForKey:@"payload"];
-        _type = [payload safeStringValueForKey:@"type"];
-        _resourceId = [payload safeStringValueForKey:@"resource_id"];
-        _category = [payload safeStringValueForKey:@"category"];
-        _body = [[OfficialAccountMessageBody alloc] initWithParameter:[payload safeObjectForKey:@"body"]];
+        _type = [model.message.ext safeStringValueForKey:@"type"];
+        _resourceId = [model.message.ext safeStringValueForKey:@"resourceid"];
+        _category = [model.message.ext safeStringValueForKey:@"category"];
+        _body = [[OfficialAccountMessageBody alloc] initWithParameter:payload];
     }
     return self;
 }
@@ -54,9 +54,8 @@
     if (self) {
         _title = [parameter safeStringValueForKey:@"title"];
         _imgUrl = [parameter safeStringValueForKey:@"imgUrl"];
-        _showImgInBody = [parameter safeIntegerValueForKey:@"showImgInBody"];
         _action = [parameter safeStringValueForKey:@"action"];
-        _bodyText = [parameter safeStringValueForKey:@"bodyText"];
+        _brief = [parameter safeStringValueForKey:@"brief"];
         _oriUrl = [parameter safeStringValueForKey:@"oriUrl"];
         _jumpUrl = [parameter safeStringValueForKey:@"jumpUrl"];
         

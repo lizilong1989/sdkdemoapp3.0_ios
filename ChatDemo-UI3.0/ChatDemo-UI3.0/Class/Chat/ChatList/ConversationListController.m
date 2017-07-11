@@ -20,6 +20,8 @@
 #import "RedPacketChatViewController.h"
 #import "ChatDemoHelper.h"
 #import "OfficialAccountsChatViewController.h"
+#import "OfficialAccountsManager.h"
+#import "OfficialAccount.h"
 
 #import "UIViewController+SearchController.h"
 
@@ -31,6 +33,9 @@
     if (self.type == EMConversationTypeChat) {
         if ([[RobotManager sharedInstance] isRobotWithUsername:self.conversationId]) {
             return [[RobotManager sharedInstance] getRobotNickWithUsername:self.conversationId];
+        } else if ([[OfficialAccountsManager sharedInstance] isOfficialAccountsWithAgentUser:self.conversationId]) {
+            OfficialAccount *account = [[OfficialAccountsManager sharedInstance] getOfficialAccountWithAgentUser:self.conversationId];
+            return account.name;
         }
         return [[UserProfileManager sharedInstance] getNickNameWithUsername:self.conversationId];
     } else if (self.type == EMConversationTypeGroupChat) {
@@ -135,7 +140,12 @@
             } else {
                 UIViewController *chatController = nil;
 #ifdef REDPACKET_AVALABLE
-                chatController = [[OfficialAccountsChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
+                if ([[OfficialAccountsManager sharedInstance] isOfficialAccountsWithAgentUser:conversation.conversationId]) {
+                    OfficialAccount *officialAccount = [[OfficialAccountsManager sharedInstance] getOfficialAccountWithAgentUser:conversation.conversationId];
+                    chatController = [[OfficialAccountsChatViewController alloc] initWithOfficialAccount:officialAccount];
+                } else {
+                    chatController = [[RedPacketChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
+                }
 #else
                 chatController = [[ChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
 #endif
@@ -164,6 +174,11 @@
                 model.avatarURLPath = profileEntity.imageUrl;
             }
         }
+        
+        if (model.conversation.latestMessage.ext && [model.conversation.latestMessage.ext objectForKey:@"em_pa_msg"]) {
+            model.title = [model.conversation showName];
+        }
+        
     } else if (model.conversation.type == EMConversationTypeGroupChat) {
         NSString *imageName = @"groupPublicHeader";
         if (![conversation.ext objectForKey:@"subject"])
@@ -225,12 +240,18 @@
         }
         
         if (lastMessage.direction == EMMessageDirectionReceive) {
-            NSString *from = lastMessage.from;
-            UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:from];
-            if (profileEntity) {
-                from = profileEntity.nickname == nil ? profileEntity.username : profileEntity.nickname;
+            if ([[OfficialAccountsManager sharedInstance] isOfficialAccountsWithAgentUser:conversationModel.conversation.conversationId]) {
+                OfficialAccount *account = [[OfficialAccountsManager sharedInstance] getOfficialAccountWithAgentUser:conversationModel.conversation.conversationId];
+                latestMessageTitle = [NSString stringWithFormat:@"%@: %@", account.name, latestMessageTitle];
+                attributedStr = [[NSMutableAttributedString alloc] initWithString:latestMessageTitle];
+            } else {
+                NSString *from = lastMessage.from;
+                UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:from];
+                if (profileEntity) {
+                    from = profileEntity.nickname == nil ? profileEntity.username : profileEntity.nickname;
+                }
+                latestMessageTitle = [NSString stringWithFormat:@"%@: %@", from, latestMessageTitle];
             }
-            latestMessageTitle = [NSString stringWithFormat:@"%@: %@", from, latestMessageTitle];
         }
         
         NSDictionary *ext = conversationModel.conversation.ext;

@@ -17,6 +17,7 @@
 #import "MBProgressHUD.h"
 
 #import "EaseSDKHelper.h"
+#import "OfficialAccountsManager.h"
 
 #ifdef REDPACKET_AVALABLE
 #import "RedpacketOpenConst.h"
@@ -157,6 +158,7 @@ static ChatDemoHelper *helper = nil;
             if (flag) {
                 [self asyncGroupFromServer];
                 [self asyncConversationFromDB];
+                [[OfficialAccountsManager sharedInstance] fetchAllMyOfficialAccountsFromServer];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideAllHUDsForView:view animated:YES];
@@ -724,6 +726,7 @@ static ChatDemoHelper *helper = nil;
     self.contactViewVC = nil;
     
     [[EMClient sharedClient] logout:NO];
+    [[OfficialAccountsManager sharedInstance] clearMyOfficialAccounts];
 }
 
 - (void)_handleReceivedAtMessage:(EMMessage*)aMessage
